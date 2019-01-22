@@ -15,8 +15,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/form-bebida.', 'BebidasController@create')->name('createBebida');
-Route::get('/form-bebida/{id}', 'BebidasController@edit')->name('editBebida');
 
 Route::prefix('bebidas')->group(function () {
     Route::get('/', 'BebidasController@index')->name('indexBebida');
@@ -25,4 +23,6 @@ Route::prefix('bebidas')->group(function () {
     Route::put('/{id}', 'BebidasController@update')->name('updateBebida');
     Route::delete('/{id}', 'BebidasController@destroy')->name('destroyBebida');
     Route::get('/{id}/confirm', 'BebidasController@confirmDelete')->name('confirmDelete');
+    Route::get('/form', 'BebidasController@create')->name('createBebida');
+    Route::get('/form/{id}', 'BebidasController@edit')->name('editBebida');
 });
