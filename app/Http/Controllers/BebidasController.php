@@ -25,7 +25,8 @@ class BebidasController extends Controller
      */
     public function create()
     {
-        return view('form-bebida');
+        // return '';
+        return view('form-bebida')->with(['bebida' => new Bebida()]);
     }
 
     /**
